@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xello.RegistryConfigurationManager.Tests.Unit", "Xello.RegistryConfigurationManager.Tests.Unit\Xello.RegistryConfigurationManager.Tests.Unit.csproj", "{216358BC-0681-4987-B312-CA04F75BA1D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xello.RegistryConfigurationManager", "Xello.RegistryConfigurationManager\Xello.RegistryConfigurationManager.csproj", "{BC3E541B-7C24-47CB-897F-A471C51B307F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xello.RegistryConfigurationManager.Tests.Integration", "Xello.RegistryConfigurationManager.Tests.Integration\Xello.RegistryConfigurationManager.Tests.Integration.csproj", "{EDBA5186-1FD3-46AE-B4C0-08B62D0B30FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{216358BC-0681-4987-B312-CA04F75BA1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216358BC-0681-4987-B312-CA04F75BA1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216358BC-0681-4987-B312-CA04F75BA1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216358BC-0681-4987-B312-CA04F75BA1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3E541B-7C24-47CB-897F-A471C51B307F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3E541B-7C24-47CB-897F-A471C51B307F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3E541B-7C24-47CB-897F-A471C51B307F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3E541B-7C24-47CB-897F-A471C51B307F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDBA5186-1FD3-46AE-B4C0-08B62D0B30FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDBA5186-1FD3-46AE-B4C0-08B62D0B30FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDBA5186-1FD3-46AE-B4C0-08B62D0B30FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDBA5186-1FD3-46AE-B4C0-08B62D0B30FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B63F464-3C87-4459-AFA2-4D1310F347AB}
+	EndGlobalSection
+EndGlobal
