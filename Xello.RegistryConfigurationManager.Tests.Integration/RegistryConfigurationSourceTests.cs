@@ -6,7 +6,6 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
     [TestClass]
     public class RegistryProviderTests
     {
-        private RegistryEditor _editor;
         private string _path = @"SOFTWARE\xellotest";
         
         public RegistryProviderTests()
