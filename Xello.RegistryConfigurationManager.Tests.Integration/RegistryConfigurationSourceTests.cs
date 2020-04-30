@@ -34,10 +34,10 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
 
             var result = string.Empty;
             provider.TryGet(name, out result);
-
-            Assert.AreEqual(value, result);
+                       
 
             editor.Cleanup();
+            Assert.AreEqual(value, result);
         }
 
         [TestMethod]
@@ -52,9 +52,10 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
             provider.Set(name, value);
 
             var result = editor.GetValue(name);
-            Assert.AreEqual(value, result);
 
             editor.Cleanup();
+            Assert.AreEqual(value, result);
+
         }
     }
 }
