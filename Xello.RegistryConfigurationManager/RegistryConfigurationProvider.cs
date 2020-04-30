@@ -19,15 +19,14 @@ namespace Xello.RegistryConfigurationManager
         
         public override void Load()
         {
-            var registry = Registry
-                            .LocalMachine
-                            .CreateSubKey(_path); //will create if not exists. If we decide to error on non-exist, use OpenSubKey instead
-
-            var keys = registry.GetValueNames();
-
-            Data = keys.ToDictionary(key=> key, key => registry.GetValue(key).ToString());
-
-            registry.Close();
+            using (RegistryKey regKey = Registry.LocalMachine.OpenSubKey(_path))
+            {
+                if (regKey != null)
+                {
+                    var keys = regKey.GetValueNames();
+                    Data = keys.ToDictionary(key => key, key => regKey.GetValue(key).ToString());
+                }
+            }
         }
 
         public override void Set(string name, string value)
