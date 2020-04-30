@@ -37,7 +37,7 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
             var key = RegistryConfigurationExtensions.DefaultSubKey;
             var name = "test_name";
 
-            Test(key, name, value, true);
+            Assert.IsTrue(Test(key, name, value, true));
 
         }
 
@@ -48,7 +48,7 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
             var key = RegistryConfigurationExtensions.DefaultSubKey;
             var name = "test_name";
             
-            Test(key, name, value, true);
+            Assert.IsTrue(Test(key, name, value, true));
         }
 
         [TestMethod]
@@ -58,10 +58,10 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
             var key = RegistryConfigurationExtensions.DefaultSubKey;
             var value = "test_appsetting_value";
             
-            Test(key, name, value);
+            Assert.IsTrue(Test(key, name, value));
         }
 
-        public void Test(string key, string name, string value, bool register)
+        public bool Test(string key, string name, string value, bool register)
         {
             if (!register)
             {
@@ -70,13 +70,15 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
 
             var regedit = new RegistryEditor(Registry.LocalMachine, key);
             regedit.SetValue(name, value);
-
-            Test(key, name, value);
+            
+            var ret = Test(key, name, value);
 
             regedit.Cleanup();
+
+            return ret;
         }
 
-        public void Test(string key, string name, string value)
+        public bool Test(string key, string name, string value)
         {   
             KvpStub.Key = name;
 
@@ -88,9 +90,11 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
 
             web.Start();
 
-            Assert.AreEqual(value, KvpStub.RegValue);
+            var ret = String.Equals(value, KvpStub.RegValue);
 
             web.Dispose();
+            
+            return ret;
         }
     }
     
