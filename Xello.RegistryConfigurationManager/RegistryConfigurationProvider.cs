@@ -1,10 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Primitives;
 using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Xello.RegistryConfigurationManager
 {
@@ -19,14 +14,7 @@ namespace Xello.RegistryConfigurationManager
         
         public override void Load()
         {
-            using (RegistryKey regKey = Registry.LocalMachine.OpenSubKey(_path))
-            {
-                if (regKey != null)
-                {
-                    var keys = regKey.GetValueNames();
-                    Data = keys.ToDictionary(key => key, key => regKey.GetValue(key).ToString());
-                }
-            }
+            Data = RegistryConfigurationSubKeyParser.Parse(_path);
         }
 
         public override void Set(string name, string value)
