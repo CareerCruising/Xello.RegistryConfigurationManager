@@ -39,8 +39,15 @@ namespace Xello.RegistryConfigurationManager.Tests.Integration
         public void SetValue(string name, string value)
         {
             var key = _hkey.CreateSubKey(Subkey);
-            key.SetValue(name, value);            
-            key.Close();            
+            key.SetValue(name, value);
+            key.Close();
+        }
+
+        public void SetValue(string name, object value, RegistryValueKind registryValueKind)
+        {
+            var key = _hkey.CreateSubKey(Subkey);
+            key.SetValue(name, value, registryValueKind);
+            key.Close();
         }
     }
 }
